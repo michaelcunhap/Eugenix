@@ -1,0 +1,89 @@
+:root{font-family:Arial,Helvetica,sans-serif;color:#212b39;background:#f5f6f8;font-synthesis:none;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+body{margin:0;min-width:320px}
+button,input,select{font:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid #9bb8d7;outline-offset:3px}
+.welcome{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:48px 24px;background:#f5f6f8}
+.welcome-inner{width:min(100%,490px)}
+.welcome h1{font-size:clamp(46px,7vw,66px);line-height:1.1;letter-spacing:-2.8px;margin:0 0 16px;font-weight:700;color:#223247}
+.welcome p{font-size:16px;color:#657184;line-height:1.6;margin:0 0 32px}
+.start-button{display:inline-flex;align-items:center;justify-content:center;min-width:148px!important;padding:14px 24px!important;font-size:14px!important;border-radius:7px!important}
+
+[hidden]{display:none!important}
+.header{background:#fff;border-bottom:1px solid #e7e9ed}
+.header-inner{max-width:1460px;margin:auto;height:66px;padding:0 32px;display:flex;align-items:center;gap:42px}
+.site-name{font-size:20px;font-weight:700;letter-spacing:-.4px}
+.header nav{height:100%;display:flex;align-items:stretch}
+.header a{display:flex;align-items:center;padding:0 12px;border-bottom:2px solid #334e72;color:#2d4767;font-weight:600;font-size:14px;text-decoration:none}
+.main{max-width:1460px;margin:0 auto;padding:40px 32px 70px}
+.columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
+.panel{min-width:0;overflow:hidden;background:#fff;border:1px solid #e4e8ee;border-radius:10px;box-shadow:0 3px 16px #17253607}
+.section-heading{padding:23px 23px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.section-title{display:flex;align-items:center;gap:10px;min-width:0}
+.section-title h2{font-size:17px;font-weight:700;margin:0}
+.count{font-size:12px;border-radius:12px;padding:3px 7px;color:#687386;background:#eff1f4;font-weight:600}
+.button{border-radius:6px;border:1px solid transparent;padding:9px 14px;min-height:38px;font-size:13px;font-weight:600;white-space:nowrap;transition:background .15s,border-color .15s}
+.button.primary{color:#fff;background:#294766;border-color:#294766}
+.button.primary:hover{background:#1f3851}
+.button.secondary{color:#3d4654;background:#fff;border-color:#d7dce3}
+.button.secondary:hover{background:#f7f8fa}
+.button.danger{background:#b03f42;color:white;border-color:#b03f42}
+.button.danger:hover{background:#922f32}
+.tools{padding:0 23px 20px;display:flex;gap:8px;align-items:center}
+.tools input{min-width:0;flex:1}
+.tools select{max-width:188px;min-width:0;flex:0 0 auto}
+.tools input,.tools select,.field input{height:40px;border:1px solid #dce1e8;border-radius:6px;background:#fff;padding:0 11px;font-size:13px;color:#263345;outline:0}
+.tools input:focus,.tools select:focus,.field input:focus{border-color:#587ca8;box-shadow:0 0 0 3px #587ca821}
+.tools input::placeholder{color:#89929e}
+.inline-form{margin:0 23px 20px;padding:17px 18px;background:#f9fafb;border:1px solid #e2e6eb;border-radius:6px}
+.form-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}
+.form-top h3{font-size:15px;margin:0}
+.text-button{border:0;background:none;color:#556b85;font-size:12px;padding:3px 0}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;min-width:0}
+.field label{font-size:12px;font-weight:600;color:#465160}
+.field input{width:100%;background:#fff}
+.date-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-error{color:#a43c3c;font-size:12px;margin:0 0 12px}
+.form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:4px}
+.record-list{border-top:1px solid #edf0f3;min-height:92px}
+.item{padding:19px 23px;border-bottom:1px solid #edf0f3}
+.item:last-child{border-bottom:0}
+.item-top{display:flex;justify-content:space-between;align-items:start;gap:10px}
+.item-name{font-size:14px;font-weight:600;line-height:1.35;overflow-wrap:anywhere}
+.item-info{font-size:12px;color:#6b7686;line-height:1.65;margin-top:7px;overflow-wrap:anywhere}
+.item-status{margin-top:9px;display:inline-block;padding:3px 8px;border:1px solid #e0e4e8;border-radius:3px;font-size:11px;color:#5e6876}
+.item-status.vigente{background:#edf7ef;border-color:#d2e9d7;color:#2e7142}
+.item-status.programado{background:#eff5fd;border-color:#dae5f3;color:#37618f}
+.item-status.encerrado{background:#f3f4f5;border-color:#e2e4e7;color:#6f7680}
+.item-actions{display:flex;gap:9px;flex-shrink:0}
+.item-actions button{border:0;background:none;padding:4px 1px;color:#3c618c;font-size:12px}
+.item-actions button:hover{text-decoration:underline}
+.item-actions button.remove{color:#a44242}
+.empty{font-size:13px;color:#89929d;padding:42px 20px;text-align:center}
+.list-footer{padding:13px 23px;border-top:1px solid #edf0f3;color:#84909f;font-size:12px}
+.screen-reader{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+dialog{padding:0;border:1px solid #e0e4e9;border-radius:8px;box-shadow:0 20px 70px #1c2b3c36;width:min(390px,calc(100vw - 28px))}
+dialog::backdrop{background:#0c152867}
+.confirm-content{padding:25px}
+.confirm-content h2{font-size:18px;margin:0 0 9px}
+.confirm-content p{white-space:pre-line;font-size:13px;color:#5f6a79;line-height:1.5;margin:0 0 24px}
+.notice{position:fixed;right:24px;bottom:20px;background:#273950;color:white;padding:11px 15px;border-radius:5px;font-size:13px;box-shadow:0 5px 24px #27395030;max-width:calc(100vw - 35px);z-index:20}
+@media(max-width:1070px){.columns{grid-template-columns:minmax(0,1fr)}.tools select{max-width:220px}}
+@media(max-width:600px){.welcome{padding:40px 26px}.welcome h1{letter-spacing:-2px}.welcome p{font-size:15px}.header-inner{height:58px;padding:0 16px;gap:26px}.main{padding:25px 14px 44px}.panel{border-radius:5px}.section-heading{padding:17px 15px 15px}.tools{padding:0 15px 15px;flex-direction:column;align-items:stretch}.tools select{max-width:none;width:100%}.item{padding:15px}.item-actions{gap:10px}.inline-form{margin:0 15px 15px;padding:15px 12px}.list-footer{padding:12px 15px}.date-fields{grid-template-columns:1fr;gap:0}.section-heading .button{padding:9px 10px;font-size:12px}.notice{right:12px;bottom:12px}}
+
+.date-control{position:relative;width:100%}
+.date-control input{padding-right:42px}
+.calendar-button{position:absolute;right:0;top:0;width:40px;height:40px;display:grid;place-items:center;background:transparent;color:#687588;border:0;border-radius:6px}
+.calendar-button:hover{color:#294766;background:#edf1f6}
+.calendar-button svg{width:19px;height:19px}
+.date-calendar{position:fixed;z-index:1000;width:290px;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overflow-y:auto;padding:14px;background:#fff;border:1px solid #dfe4eb;border-radius:8px;box-shadow:0 12px 35px #18283d24}
+.calendar-header{display:flex;justify-content:space-between;align-items:center;gap:4px;margin-bottom:13px;color:#293b50;font-size:13px;font-weight:600;text-transform:capitalize}
+.calendar-header button{border:0;background:transparent;border-radius:5px;width:30px;height:30px;color:#425b78;font-size:20px;display:grid;place-items:center}
+.calendar-header button:hover{background:#edf2f7}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px;text-align:center}
+.calendar-grid>span{display:grid;place-items:center;height:30px;font-size:11px;color:#89929e}
+.calendar-grid button{height:34px;border:0;border-radius:5px;background:transparent;font-size:12px;color:#303c4c}
+.calendar-grid button:hover{background:#edf2f7}
+.calendar-grid button[aria-current="date"]{box-shadow:inset 0 0 0 1px #96a9bd}
+.calendar-grid button[aria-pressed="true"]{background:#294766;color:#fff}

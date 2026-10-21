@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>Eugenix</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <section class="welcome" id="boas-vindas" aria-labelledby="welcome-title">
+    <div class="welcome-inner">
+      <h1 id="welcome-title">Eugenix</h1>
+      <p>Ambiente de gerenciamento local</p>
+      <button id="start-button" class="button primary start-button" type="button">Começar</button>
+    </div>
+  </section>
+
+  <header class="header" id="app-header" hidden>
+    <div class="header-inner">
+      <span class="site-name">Eugenix</span>
+      <nav aria-label="Menu principal"><a class="nav-current" href="#inicio" aria-current="page">Início</a></nav>
+    </div>
+  </header>
+
+  <main class="main" id="inicio" hidden>
+    <div class="columns">
+      <section class="panel" id="secao-encargos" aria-labelledby="encargos-title">
+        <div class="section-heading">
+          <div class="section-title"><h2 id="encargos-title">Encargos</h2><span class="count" id="encargos-count">0</span></div>
+          <button class="button primary" type="button" data-action="new" data-kind="encargos">+ Novo encargo</button>
+        </div>
+        <div class="tools">
+          <label class="screen-reader" for="encargos-search">Pesquisar encargos</label>
+          <input id="encargos-search" type="search" autocomplete="off" placeholder="Buscar encargo ou portaria">
+          <label class="screen-reader" for="encargos-filter">Filtrar encargos por situação</label>
+          <select id="encargos-filter">
+            <option value="todos">Todas as situações</option>
+            <option value="vigente">Vigentes</option>
+            <option value="programado">Programados</option>
+            <option value="encerrado">Encerrados</option>
+          </select>
+        </div>
+        <div class="inline-form" id="encargos-form-wrap" hidden>
+          <form id="encargos-form" novalidate>
+            <div class="form-top"><h3 id="encargos-form-title">Novo encargo</h3><button type="button" class="text-button" data-action="cancel" data-kind="encargos">Fechar</button></div>
+            <div class="field"><label for="encargos-nome">Nome</label><input id="encargos-nome" name="nome" type="text" maxlength="120" required autocomplete="off"></div>
+            <div class="field"><label for="encargos-portaria">Número da portaria</label><input id="encargos-portaria" name="portaria" type="text" maxlength="60" required autocomplete="off" placeholder="Ex: 123/2026"></div>
+            <div class="date-fields">
+              <div class="field"><label for="encargos-inicio">Início da vigência</label><div class="date-control"><input id="encargos-inicio" name="inicio" type="text" inputmode="numeric" autocomplete="off" maxlength="10" placeholder="dd/mm/aaaa" aria-label="Data de início da vigência em dia mês e ano" required><button type="button" class="calendar-button" data-calendar-for="encargos-inicio" aria-label="Abrir calendário de início da vigência" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="15" rx="2"/><path d="M7.5 3.5v4M16.5 3.5v4M3.5 10h17"/></svg></button></div></div>
+              <div class="field"><label for="encargos-fim">Fim da vigência</label><div class="date-control"><input id="encargos-fim" name="fim" type="text" inputmode="numeric" autocomplete="off" maxlength="10" placeholder="dd/mm/aaaa" aria-label="Data de fim da vigência em dia mês e ano" required><button type="button" class="calendar-button" data-calendar-for="encargos-fim" aria-label="Abrir calendário de fim da vigência" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="15" rx="2"/><path d="M7.5 3.5v4M16.5 3.5v4M3.5 10h17"/></svg></button></div></div>
+            </div>
+            <p class="form-error" id="encargos-error" role="alert" hidden></p>
+            <div class="form-actions"><button type="button" class="button secondary" data-action="cancel" data-kind="encargos">Cancelar</button><button type="submit" class="button primary">Salvar</button></div>
+          </form>
+        </div>
+        <div id="encargos-list" class="record-list" aria-live="polite"></div>
+        <div class="list-footer" id="encargos-footer">0 registros</div>
+      </section>
+
+      <section class="panel" id="secao-docentes" aria-labelledby="docentes-title">
+        <div class="section-heading">
+          <div class="section-title"><h2 id="docentes-title">Docentes</h2><span class="count" id="docentes-count">0</span></div>
+          <button class="button primary" type="button" data-action="new" data-kind="docentes">+ Novo docente</button>
+        </div>
+        <div class="tools">
+          <label class="screen-reader" for="docentes-search">Pesquisar docentes</label>
+          <input id="docentes-search" type="search" autocomplete="off" placeholder="Buscar docente ou colegiado">
+          <label class="screen-reader" for="docentes-filter">Filtrar docentes por colegiado</label>
+          <select id="docentes-filter"><option value="todos">Todos os colegiados</option></select>
+        </div>
+        <div class="inline-form" id="docentes-form-wrap" hidden>
+          <form id="docentes-form" novalidate>
+            <div class="form-top"><h3 id="docentes-form-title">Novo docente</h3><button type="button" class="text-button" data-action="cancel" data-kind="docentes">Fechar</button></div>
+            <div class="field"><label for="docentes-nome">Nome</label><input id="docentes-nome" name="nome" type="text" maxlength="120" required autocomplete="off"></div>
+            <div class="field"><label for="docentes-colegiado">Colegiado</label><input id="docentes-colegiado" name="colegiado" type="text" maxlength="120" required autocomplete="off"></div>
+            <p class="form-error" id="docentes-error" role="alert" hidden></p>
+            <div class="form-actions"><button type="button" class="button secondary" data-action="cancel" data-kind="docentes">Cancelar</button><button type="submit" class="button primary">Salvar</button></div>
+          </form>
+        </div>
+        <div id="docentes-list" class="record-list" aria-live="polite"></div>
+        <div class="list-footer" id="docentes-footer">0 registros</div>
+      </section>
+    </div>
+  </main>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+    <div class="confirm-content">
+      <h2 id="confirm-title">Confirmação de exclusão</h2>
+      <p id="confirm-message"></p>
+      <div class="form-actions"><button id="confirm-cancel" class="button secondary" type="button">Cancelar</button><button id="confirm-yes" class="button danger" type="button">Excluir</button></div>
+    </div>
+  </dialog>
+  <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
